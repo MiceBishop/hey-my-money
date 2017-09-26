@@ -9,18 +9,19 @@ import {
 } from 'react-native'
 
 import colors from '~theme/colors.json'
+import fonts from '~theme/fonts.json'
 import MyButton from './MyButton.js'
 
 export default class StepThree extends Component {
   handlePress() {
-
+    // this.props.onPageChange(3);
   }
 
   render() {
     return(
       <View style={styles.background}>
         <View style={styles.part}>
-          <Text style={{color: colors.SECONDARY}}>Allons-y !</Text>
+          <Text style={styles.quote}>Allons-y !</Text>
         </View>
         <View style={styles.part}>
           <Image source={require('../../assets/images/logo-white.png')} style={styles.logo} />
@@ -32,7 +33,7 @@ export default class StepThree extends Component {
         <View style={styles.part}>
           <MyButton
             title="Commencer"
-            onPress={this.handlePress}
+            onPress={this.handlePress.bind(this)}
           />
         </View>
       </View>
@@ -45,10 +46,12 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    padding: 10
   },
   quote: {
-      color: colors.SECONDARY,
-      fontFamily: "Dosis-Regular"
+    color: colors.SECONDARY,
+    fontFamily: fonts.PRIMARY,
+    fontSize: 20
   },
   background: {
     flex: 1,

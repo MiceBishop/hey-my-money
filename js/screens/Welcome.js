@@ -11,21 +11,39 @@ import StepTwo from '../components/StepTwo.js'
 import StepThree from '../components/StepThree.js'
 
 export default class Welcome extends Component {
+  
+  constructor(props) {
+    super(props)
+    this.state = {
+      activePage: 0,
+    }
+  }
+
+  gotoPage(page) {
+    this.refs.viewPager.setPage(page);
+  }
+
+  onPageSelected({ position }) {
+    this.setState({ activePage: position });
+  }
+
   render() {
     return(
       <View style={{flex:1}}>
         <IndicatorViewPager
             style={{flex:1}}
             indicator={this._renderDotIndicator()}
+            onPageSelected={this.onPageSelected.bind(this)}
+            ref="viewPager"
         >
-          <View style={{backgroundColor:'cadetblue'}}>
-            <StepOne />
+          <View>
+            <StepOne onPageChange={(page) => this.gotoPage(page)} />
           </View>
-          <View style={{backgroundColor:'cornflowerblue'}}>
-            <StepTwo />
+          <View>
+            <StepTwo onPageChange={(page) => this.gotoPage(page)} />
           </View>
-          <View style={{backgroundColor:'#1AA094'}}>
-            <StepThree />
+          <View>
+            <StepThree onPageChange={(page) => this.gotoPage(page)} />
           </View>
         </IndicatorViewPager>
       </View>

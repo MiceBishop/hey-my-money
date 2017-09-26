@@ -6,6 +6,7 @@ import {
 } from 'react-native'
 
 import colors from '~theme/colors.json'
+import fonts from '~theme/fonts.json'
 
 import CustomTextInput from './CustomTextInput.js'
 import MyButton from './MyButton.js'
@@ -21,14 +22,14 @@ export default class StepTwo extends Component {
   }
 
   handlePress() {
-
+    this.props.onPageChange(2);
   }
 
   render() {
     return(
       <View style={styles.background}>
         <View style={styles.part}>
-          <Text style={{color: colors.SECONDARY}}>Quelques informations utiles</Text>
+          <Text style={styles.quote}>Quelques informations utiles</Text>
         </View>
         <View style={styles.part}>
           <CustomTextInput
@@ -44,7 +45,7 @@ export default class StepTwo extends Component {
         <View style={styles.part}>
           <MyButton
             title="Suivant"
-            onPress={this.handlePress}
+            onPress={this.handlePress.bind(this)}
           />
         </View>
       </View>
@@ -63,5 +64,10 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "teal",
     justifyContent: 'center',
+  },
+  quote: {
+    color: colors.SECONDARY,
+    fontFamily: fonts.PRIMARY,
+    fontSize: 20
   },
 });

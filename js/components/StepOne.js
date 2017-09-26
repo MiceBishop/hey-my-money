@@ -9,18 +9,20 @@ import {
 } from 'react-native'
 
 import colors from '~theme/colors.json'
+import fonts from '~theme/fonts.json'
 import MyButton from './MyButton.js'
 
 export default class StepOne extends Component {
   handlePress() {
 
+    this.props.onPageChange(1);
   }
 
   render() {
     return(
       <View style={styles.background}>
         <View style={styles.part}>
-          <Text style={{color: colors.SECONDARY}}>Bienvenue</Text>
+          <Text style={styles.quote}>Bienvenue dans Sama Xaliss</Text>
         </View>
         <View style={styles.part}>
           <Image source={require('../../assets/images/logo-white.png')} style={styles.logo} />
@@ -28,7 +30,7 @@ export default class StepOne extends Component {
         <View style={styles.part}>
           <MyButton
             title="Suivant"
-            onPress={this.handlePress}
+            onPress={this.handlePress.bind(this)}
           />
         </View>
       </View>
@@ -37,6 +39,11 @@ export default class StepOne extends Component {
 }
 
 const styles = StyleSheet.create({
+  quote: {
+    color: colors.SECONDARY,
+    fontFamily: fonts.PRIMARY,
+    fontSize: 20
+  },
   part: {
     flex: 1,
     justifyContent: 'center',
