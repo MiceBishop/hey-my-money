@@ -4,8 +4,12 @@ import {
   Text,
   Image,
   Button,
+  Platform,
   StyleSheet
 } from 'react-native'
+
+import colors from '~theme/colors.json'
+import MyButton from './MyButton.js'
 
 export default class StepOne extends Component {
   handlePress() {
@@ -16,17 +20,15 @@ export default class StepOne extends Component {
     return(
       <View style={styles.background}>
         <View style={styles.part}>
-          <Text>Welcome</Text>
+          <Text style={{color: colors.SECONDARY}}>Bienvenue</Text>
         </View>
         <View style={styles.part}>
-          <Image source={require('../../assets/images/logo-hey-my-money.png')} style={styles.logo} />
+          <Image source={require('../../assets/images/logo-white.png')} style={styles.logo} />
         </View>
         <View style={styles.part}>
-          <Button
+          <MyButton
             title="Suivant"
-            color="#841584"
             onPress={this.handlePress}
-            style={styles.nextButton}
           />
         </View>
       </View>
@@ -42,11 +44,11 @@ const styles = StyleSheet.create({
   },
   background: {
     flex: 1,
-    backgroundColor: "teal",
+    backgroundColor: colors.BACKGROUND,
     justifyContent: 'center',
   },
   logo: {
     height: 190,
     width: 200,
-  }
+  },
 });
