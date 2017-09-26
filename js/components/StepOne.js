@@ -42,9 +42,8 @@ const styles = StyleSheet.create({
   },
   background: {
     flex: 1,
-    backgroundColor: "grey",
+    backgroundColor: "teal",
     justifyContent: 'center',
-    alignItems: 'center',
   },
   logo: {
     height: 190,
