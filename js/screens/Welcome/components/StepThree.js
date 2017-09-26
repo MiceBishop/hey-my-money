@@ -10,26 +10,30 @@ import {
 
 import colors from '~theme/colors.json'
 import fonts from '~theme/fonts.json'
-import MyButton from './MyButton.js'
+import MyButton from '~components/MyButton.js'
 
-export default class StepOne extends Component {
+export default class StepThree extends Component {
   handlePress() {
-
-    this.props.onPageChange(1);
+    // this.props.onPageChange(3);
   }
 
   render() {
     return(
       <View style={styles.background}>
         <View style={styles.part}>
-          <Text style={styles.quote}>Bienvenue dans Sama Xaliss</Text>
+          <Text style={styles.quote}>Allons-y !</Text>
         </View>
         <View style={styles.part}>
-          <Image source={require('../../assets/images/logo-white.png')} style={styles.logo} />
+          <Image source={require('~assets/images/logo-white.png')} style={styles.logo} />
+          <Text style={styles.quote}>
+              Boly: "Seynou ! Tu me dois pas de l'argent par hasard ?"{'\n\n'}
+              Seynou: "Non Boly, je sais que tu es pauvre mais tu me le refera pas cette fois-ci, j'ai Sama Xaliss" !{'\n\n'}
+              Boly: " :'( Quel flop !'"
+            </Text>
         </View>
         <View style={styles.part}>
           <MyButton
-            title="Suivant"
+            title="Commencer"
             onPress={this.handlePress.bind(this)}
           />
         </View>
@@ -39,15 +43,17 @@ export default class StepOne extends Component {
 }
 
 const styles = StyleSheet.create({
-  quote: {
-    color: colors.SECONDARY,
-    fontFamily: fonts.PRIMARY,
-    fontSize: 20
-  },
   part: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    padding: 10
+  },
+  quote: {
+    color: colors.SECONDARY,
+    fontFamily: fonts.PRIMARY,
+    fontSize: 15,
+    textAlign: 'center',
   },
   background: {
     flex: 1,

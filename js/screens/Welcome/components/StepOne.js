@@ -2,45 +2,30 @@ import React, { Component } from 'react'
 import {
   View,
   Text,
+  Image,
+  Button,
+  Platform,
   StyleSheet
 } from 'react-native'
 
 import colors from '~theme/colors.json'
 import fonts from '~theme/fonts.json'
+import MyButton from '~components/MyButton.js'
 
-import CustomTextInput from './CustomTextInput.js'
-import MyButton from './MyButton.js'
-
-export default class StepTwo extends Component {
-
-  constructor(props) {
-    super(props)
-    this.state = {
-      pseudo: '',
-      mail: '',
-    }
-  }
-
+export default class StepOne extends Component {
   handlePress() {
-    this.props.onPageChange(2);
+
+    this.props.onPageChange(1);
   }
 
   render() {
     return(
       <View style={styles.background}>
         <View style={styles.part}>
-          <Text style={styles.quote}>Quelques informations utiles</Text>
+          <Text style={styles.quote}>Bienvenue dans Sama Xaliss</Text>
         </View>
         <View style={styles.part}>
-          <CustomTextInput
-            icon='account-circle'
-            placeholder="Pseudo"
-          />
-          <CustomTextInput
-            icon='email'
-            keyboardType='email-address'
-            placeholder="Email"
-          />
+          <Image source={require('~assets/images/logo-white.png')} style={styles.logo} />
         </View>
         <View style={styles.part}>
           <MyButton
@@ -54,20 +39,23 @@ export default class StepTwo extends Component {
 }
 
 const styles = StyleSheet.create({
+  quote: {
+    color: colors.SECONDARY,
+    fontFamily: fonts.PRIMARY,
+    fontSize: 20
+  },
   part: {
     flex: 1,
-    backgroundColor: colors.BACKGROUND,
     justifyContent: 'center',
     alignItems: 'center',
   },
   background: {
     flex: 1,
-    backgroundColor: "teal",
+    backgroundColor: colors.BACKGROUND,
     justifyContent: 'center',
   },
-  quote: {
-    color: colors.SECONDARY,
-    fontFamily: fonts.PRIMARY,
-    fontSize: 20
+  logo: {
+    height: 190,
+    width: 200,
   },
 });

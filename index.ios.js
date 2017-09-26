@@ -12,7 +12,7 @@ import {
   View
 } from 'react-native';
 
-import Welcome from './js/screens/Welcome.js'
+import Welcome from '~screens/Welcome/'
 
 export default class HeyMyMoney extends Component {
   render() {

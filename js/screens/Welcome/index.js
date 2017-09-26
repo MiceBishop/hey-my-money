@@ -6,9 +6,9 @@ import {
   StyleSheet
 } from 'react-native'
 
-import StepOne from '../components/StepOne.js'
-import StepTwo from '../components/StepTwo.js'
-import StepThree from '../components/StepThree.js'
+import StepOne from '~screens/Welcome/components/StepOne.js'
+import StepTwo from '~screens/Welcome/components/StepTwo.js'
+import StepThree from '~screens/Welcome/components/StepThree.js'
 
 export default class Welcome extends Component {
   
