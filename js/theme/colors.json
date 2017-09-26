@@ -1,4 +1,6 @@
 {
   "PRIMARY": "#FB8C00",
-  "ACCENT": "green"
+  "SECONDARY": "#FFFFFF",
+  "BACKGROUND": "#1A237E",
+  "LABEL": "#C47E4D"
 }
