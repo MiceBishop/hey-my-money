@@ -14,17 +14,22 @@
     "rn-viewpager": "^1.2.4"
   },
   "devDependencies": {
+    "@storybook/addon-actions": "^3.2.10",
+    "@storybook/addon-links": "^3.2.10",
+    "@storybook/react-native": "^3.2.10",
     "babel-jest": "21.0.2",
     "babel-preset-react-native": "4.0.0",
     "jest": "21.1.0",
-    "react-test-renderer": "16.0.0-alpha.12",
-    "@storybook/react-native": "^3.2.10",
-    "@storybook/addon-actions": "^3.2.10",
-    "@storybook/addon-links": "^3.2.10",
+    "prop-types": "^15.6.0",
     "react-dom": "16.0.0-alpha.12",
-    "prop-types": "^15.5.10"
+    "react-test-renderer": "16.0.0-alpha.12"
   },
   "jest": {
     "preset": "react-native"
+  },
+  "rnpm": {
+    "assets": [
+      "./assets/fonts/"
+    ]
   }
 }
