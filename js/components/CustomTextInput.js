@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { TextInput, StyleSheet, View } from 'react-native';
 import colors from '~theme/colors';
 import Icon from 'react-native-vector-icons/MaterialIcons';
+import PropTypes from 'prop-types';
 
 export default class CustomTextInput extends Component {
 
@@ -47,3 +48,8 @@ const styles = StyleSheet.create({
         borderBottomRightRadius: 4,
     }
 })
+
+CustomTextInput.propTypes = {
+    icon: PropTypes.string.isRequired,
+    style: PropTypes.object
+}
