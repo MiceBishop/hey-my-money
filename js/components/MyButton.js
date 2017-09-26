@@ -9,21 +9,18 @@ import {
   StyleSheet
 } from 'react-native'
 import colors from '~theme/colors.json'
+import { RaisedTextButton } from 'react-native-material-buttons'
 
 export default class MyButton extends Component {
 
   render() {
     return(
         Platform.OS === 'android' ?
-        <View style={styles.container}>
-          <TouchableNativeFeedback
-            {...this.props}
-            background={TouchableNativeFeedback.Ripple('#BDBDBD', false)}>
-            <View style={styles.button}>
-              <Text style={styles.text}>{this.props.title}</Text>
-            </View>
-          </TouchableNativeFeedback>
-        </View> :
+        <RaisedTextButton
+          titleColor={colors.BACKGROUND}
+          title={this.props.title}
+          {...this.props}
+        /> :
         <Button
           {...this.props}
           title={this.props.title}
