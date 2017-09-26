@@ -7,6 +7,7 @@ import {
 } from 'react-native'
 
 import StepOne from '../components/StepOne.js'
+import StepTwo from '../components/StepTwo.js'
 
 export default class Welcome extends Component {
   render() {
@@ -20,7 +21,7 @@ export default class Welcome extends Component {
             <StepOne />
           </View>
           <View style={{backgroundColor:'cornflowerblue'}}>
-            <Text>page two</Text>
+            <StepTwo />
           </View>
           <View style={{backgroundColor:'#1AA094'}}>
             <Text>page three</Text>
