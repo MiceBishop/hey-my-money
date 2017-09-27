@@ -7,13 +7,13 @@ import colors from '~theme/colors'
 
 import Icon from 'react-native-vector-icons/Ionicons';
 
-export default class Earnings extends Component {
+export default class Friends extends Component {
   static navigationOptions = {
-    tabBarLabel: 'Gains',
+    tabBarLabel: 'Amis',
     tabBarIcon: ({ tintColor }) => {
       return(
         <Icon
-          name={ Platform === 'ios' ? 'ios-cash' : 'md-cash' }
+          name={ Platform === 'ios' ? 'ios-people' : 'md-people' }
           size={25}
           color={ tintColor }
         />
@@ -26,7 +26,7 @@ export default class Earnings extends Component {
   render() {
     return(
       <View style={styles.home}>
-        <Text>Mes Gains</Text>
+        <Text>Mes amis</Text>
       </View>
     )
   }

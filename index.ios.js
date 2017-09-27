@@ -9,15 +9,16 @@ import {
   AppRegistry,
   StatusBar,
   View,
-  Platform
 } from 'react-native';
 
 import { StackNavigator, TabNavigator } from 'react-navigation'
+import Icon from 'react-native-vector-icons/Ionicons'
 
 import Welcome from '~screens/Welcome'
 import Home from '~screens/Home'
 import Earnings from '~screens/Earnings'
 import Losses from '~screens/Losses'
+import Friends from '~screens/Friends'
 import colors from '~theme/colors'
 
 class App extends Component {
@@ -25,7 +26,7 @@ class App extends Component {
     return(
       <View>
         <StatusBar backgroundColor={colors.BACKGROUND} />
-        <App />
+        <HeyMyMoney />
       </View>
     )
   }
@@ -35,6 +36,7 @@ const DashboardNavigator = TabNavigator({
     Home: {screen: Home},
     Earnings: {screen: Earnings},
     Losses: {screen: Losses},
+    Friends: {screen: Friends},
 }, {
   swipeEnabled: true,
   tabBarOptions: {
@@ -58,7 +60,12 @@ const HeyMyMoney = StackNavigator({
     navigationOptions: {
       title: "Sama Xaliss",
       headerStyle: {backgroundColor: colors.BACKGROUND },
-      headerTintColor: colors.SECONDARY
+      headerTintColor: colors.SECONDARY,
+      headerLeft: () => {
+        return (
+          <Icon name="ios-cog" size={24} color="white" />
+        )
+      }
     },
   },
 })

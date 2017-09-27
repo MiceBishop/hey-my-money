@@ -10,15 +10,16 @@ import {
   StatusBar,
   View,
   Text,
-  Platform
 } from 'react-native';
 
 import { StackNavigator, TabNavigator } from 'react-navigation'
+import Icon from 'react-native-vector-icons/Ionicons'
 
 import Welcome from '~screens/Welcome'
 import Home from '~screens/Home'
 import Earnings from '~screens/Earnings'
 import Losses from '~screens/Losses'
+import Friends from '~screens/Friends'
 import colors from '~theme/colors'
 
 class App extends Component {
@@ -37,6 +38,7 @@ const DashboardNavigator = TabNavigator({
     Home: {screen: Home},
     Earnings: {screen: Earnings},
     Losses: {screen: Losses},
+    Friends: {screen: Friends},
 }, {
   swipeEnabled: true,
   tabBarOptions: {
@@ -65,7 +67,12 @@ export const HeyMyMoney = StackNavigator({
     navigationOptions: {
       title: "Sama Xaliss",
       headerStyle: {backgroundColor: colors.BACKGROUND, elevation: 0 },
-      headerTintColor: colors.SECONDARY
+      headerTintColor: colors.SECONDARY,
+      headerLeft: () => {
+        return (
+          <Icon name="md-settings" size={24} color="white" />
+        )
+      }
     },
   },
 })

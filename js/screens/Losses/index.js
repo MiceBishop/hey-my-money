@@ -13,7 +13,7 @@ export default class Losses extends Component {
       return(
         <Icon
           name={ Platform === 'ios' ? 'ios-trending-up' : 'md-trending-up' }
-          size={20}
+          size={25}
           color={ tintColor }
         />
       )

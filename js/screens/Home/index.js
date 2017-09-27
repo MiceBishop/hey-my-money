@@ -13,7 +13,7 @@ export default class Home extends Component {
       return(
         <Icon
           name={ Platform === 'ios' ? 'ios-home' : 'md-home' }
-          size={20}
+          size={25}
           color={ tintColor }
         />
       )
