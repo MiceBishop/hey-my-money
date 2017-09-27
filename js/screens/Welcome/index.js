@@ -11,6 +11,7 @@ import { NavigationActions } from 'react-navigation'
 import StepOne from '~screens/Welcome/components/StepOne.js'
 import StepTwo from '~screens/Welcome/components/StepTwo.js'
 import StepThree from '~screens/Welcome/components/StepThree.js'
+import colors from '~theme/colors'
 
 export default class Welcome extends Component {
 
@@ -33,7 +34,7 @@ export default class Welcome extends Component {
     const resetAction = NavigationActions.reset({
       index: 0,
       actions: [
-        NavigationActions.navigate({ routeName: 'Transacs'})
+        NavigationActions.navigate({ routeName: 'Dashboard'})
       ]
     })
 

@@ -7,67 +7,62 @@
 import React, { Component } from 'react';
 import {
   AppRegistry,
-  StyleSheet,
-  Text,
-  View
+  StatusBar,
+  View,
+  Platform
 } from 'react-native';
 
-import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import { StackNavigator, TabNavigator } from 'react-navigation'
 
-import { StackNavigator, DrawerNavigator } from 'react-navigation'
-
-import MyButton from '~components/MyButton'
 import Welcome from '~screens/Welcome'
-import Transacs from '~screens/Transacs'
-import Friends from '~screens/Friends'
+import Home from '~screens/Home'
+import Earnings from '~screens/Earnings'
+import Losses from '~screens/Losses'
 import colors from '~theme/colors'
 
-class MainScreen extends Component {
-  toggleIt() {
-       const { navigation } = this.props
-       navigate('DrawerOpen') 
-    }
-
-    componentDidMount() {
-      this.props.navigation.setParams({ handleToggle: this.toggleIt });
-    }
+class App extends Component {
   render() {
-    const { navigation } = this.props
-    return (
-      <Welcome navigation={ navigation }/>
-    );
+    return(
+      <View>
+        <StatusBar backgroundColor={colors.BACKGROUND} />
+        <App />
+      </View>
+    )
   }
 }
 
-const Drawer = DrawerNavigator(
-  {
-    Transacs: {
-      path: "/",
-      screen: Transacs
+const DashboardNavigator = TabNavigator({
+    Home: {screen: Home},
+    Earnings: {screen: Earnings},
+    Losses: {screen: Losses},
+}, {
+  swipeEnabled: true,
+  tabBarOptions: {
+    activeTintColor: colors.BACKGROUND,
+    style: {
+      padding: 10,
     },
-    Friends: {
-      path: "/sent",
-      screen: Friends
+    labelStyle: {
+      fontWeight: 'bold',
     },
   },
-    {
-      initialRouteName: 'Transacs',
-      drawerPosition: 'left'
-    }
-)
+})
 
 const HeyMyMoney = StackNavigator({
   Welcome: {
     screen: Welcome,
-    navigationOptions: { title: 'Welcome', header: null }
+    navigationOptions: { header: null }
   },
-  Transacs: {
-    screen: Drawer,
-    navigationOptions: { title: 'Sama Xaliss' }
+  Dashboard: {
+    screen: DashboardNavigator,
+    navigationOptions: {
+      title: "Sama Xaliss",
+      headerStyle: {backgroundColor: colors.BACKGROUND },
+      headerTintColor: colors.SECONDARY
+    },
   },
-
 })
 
 AppRegistry.registerComponent('HeyMyMoney', () => HeyMyMoney);
 
-export default HeyMyMoney
+export default DashboardNavigator
