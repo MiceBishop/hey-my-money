@@ -10,6 +10,7 @@ import {
 } from 'react-native'
 import colors from '~theme/colors.json'
 import { RaisedTextButton } from 'react-native-material-buttons'
+import { MaterialIcons } from 'react-native-vector-icons'
 
 export default class MyButton extends Component {
 
@@ -17,14 +18,14 @@ export default class MyButton extends Component {
     return(
         Platform.OS === 'android' ?
         <RaisedTextButton
-          titleColor={colors.BACKGROUND}
+          titleColor={this.props.titleColor}
           title={this.props.title}
           {...this.props}
         /> :
         <Button
           {...this.props}
           title={this.props.title}
-          color={colors.SECONDARY}
+          color={this.props.titleColor}
         />
     )
   }
@@ -49,5 +50,6 @@ const styles = StyleSheet.create({
 })
 
 MyButton.propTypes = {
-  title: PropTypes.string.isRequired
+  title: PropTypes.string.isRequired,
+  titleColor: PropTypes.string.isRequired
 };
