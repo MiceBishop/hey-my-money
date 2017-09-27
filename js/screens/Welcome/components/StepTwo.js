@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import {
   View,
   Text,
-  StyleSheet
+  StyleSheet,
+  Platform
 } from 'react-native'
 
 import colors from '~theme/colors.json'
@@ -45,6 +46,7 @@ export default class StepTwo extends Component {
         <View style={styles.part}>
           <MyButton
             title="Suivant"
+            titleColor={Platform.OS === 'android' ? colors.BACKGROUND : colors.SECONDARY }
             onPress={this.handlePress.bind(this)}
           />
         </View>

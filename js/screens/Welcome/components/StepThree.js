@@ -13,10 +13,6 @@ import fonts from '~theme/fonts.json'
 import MyButton from '~components/MyButton.js'
 
 export default class StepThree extends Component {
-  handlePress() {
-    // this.props.onPageChange(3);
-  }
-
   render() {
     return(
       <View style={styles.background}>
@@ -34,7 +30,8 @@ export default class StepThree extends Component {
         <View style={styles.part}>
           <MyButton
             title="Commencer"
-            onPress={this.handlePress.bind(this)}
+            titleColor={Platform.OS === 'android' ? colors.BACKGROUND : colors.SECONDARY }
+            onPress={this.props.onPageChange}
           />
         </View>
       </View>

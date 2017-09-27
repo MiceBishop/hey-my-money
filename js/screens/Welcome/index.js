@@ -6,12 +6,14 @@ import {
   StyleSheet
 } from 'react-native'
 
+import { NavigationActions } from 'react-navigation'
+
 import StepOne from '~screens/Welcome/components/StepOne.js'
 import StepTwo from '~screens/Welcome/components/StepTwo.js'
 import StepThree from '~screens/Welcome/components/StepThree.js'
 
 export default class Welcome extends Component {
-  
+
   constructor(props) {
     super(props)
     this.state = {
@@ -28,6 +30,13 @@ export default class Welcome extends Component {
   }
 
   render() {
+    const resetAction = NavigationActions.reset({
+      index: 0,
+      actions: [
+        NavigationActions.navigate({ routeName: 'Transacs'})
+      ]
+    })
+
     return(
       <View style={{flex:1}}>
         <IndicatorViewPager
@@ -43,7 +52,7 @@ export default class Welcome extends Component {
             <StepTwo onPageChange={(page) => this.gotoPage(page)} />
           </View>
           <View>
-            <StepThree onPageChange={(page) => this.gotoPage(page)} />
+            <StepThree onPageChange={() => this.props.navigation.dispatch(resetAction)} />
           </View>
         </IndicatorViewPager>
       </View>
