@@ -12,18 +12,62 @@ import {
   View
 } from 'react-native';
 
-import Welcome from '~screens/Welcome/'
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
-export default class HeyMyMoney extends Component {
+import { StackNavigator, DrawerNavigator } from 'react-navigation'
+
+import MyButton from '~components/MyButton'
+import Welcome from '~screens/Welcome'
+import Transacs from '~screens/Transacs'
+import Friends from '~screens/Friends'
+import colors from '~theme/colors'
+
+class MainScreen extends Component {
+  toggleIt() {
+       const { navigation } = this.props
+       navigate('DrawerOpen') 
+    }
+
+    componentDidMount() {
+      this.props.navigation.setParams({ handleToggle: this.toggleIt });
+    }
   render() {
+    const { navigation } = this.props
     return (
-      <Welcome />
+      <Welcome navigation={ navigation }/>
     );
   }
 }
 
-const styles = StyleSheet.create({
-  
-});
+const Drawer = DrawerNavigator(
+  {
+    Transacs: {
+      path: "/",
+      screen: Transacs
+    },
+    Friends: {
+      path: "/sent",
+      screen: Friends
+    },
+  },
+    {
+      initialRouteName: 'Transacs',
+      drawerPosition: 'left'
+    }
+)
+
+const HeyMyMoney = StackNavigator({
+  Welcome: {
+    screen: Welcome,
+    navigationOptions: { title: 'Welcome', header: null }
+  },
+  Transacs: {
+    screen: Drawer,
+    navigationOptions: { title: 'Sama Xaliss' }
+  },
+
+})
 
 AppRegistry.registerComponent('HeyMyMoney', () => HeyMyMoney);
+
+export default HeyMyMoney
