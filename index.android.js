@@ -46,10 +46,13 @@ const DashboardNavigator = TabNavigator({
       backgroundColor: colors.BACKGROUND,
     },
     indicatorStyle: {
-      backgroundColor: colors.SECONDARY
+      backgroundColor: colors.SECONDARY,
+      elevation: 20,
+      height: 4,
+      borderRadius: 1.3
     },
     labelStyle: {
-      fontSize: 15,
+      fontSize: 11,
       fontWeight: 'bold',
     },
     showIcon: true,
@@ -66,7 +69,7 @@ export const HeyMyMoney = StackNavigator({
     screen: DashboardNavigator,
     navigationOptions: {
       title: "Sama Xaliss",
-      headerStyle: {backgroundColor: colors.BACKGROUND, elevation: 0 },
+      headerStyle: {backgroundColor: colors.BACKGROUND },
       headerTintColor: colors.SECONDARY,
       headerLeft: () => {
         return (

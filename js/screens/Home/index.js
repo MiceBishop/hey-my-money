@@ -12,7 +12,7 @@ export default class Home extends Component {
     tabBarIcon: ({ tintColor }) => {
       return(
         <Icon
-          name={ Platform === 'ios' ? 'ios-home' : 'md-home' }
+          name={ Platform.OS === 'ios' ? 'ios-home' : 'md-home' }
           size={25}
           color={ tintColor }
         />

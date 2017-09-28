@@ -9,11 +9,11 @@ import Icon from 'react-native-vector-icons/Ionicons';
 
 export default class Earnings extends Component {
   static navigationOptions = {
-    tabBarLabel: 'Gains',
+    tabBarLabel: 'Mes gains',
     tabBarIcon: ({ tintColor }) => {
       return(
         <Icon
-          name={ Platform === 'ios' ? 'ios-cash' : 'md-cash' }
+          name={ Platform.OS === 'ios' ? 'ios-cash' : 'md-cash' }
           size={25}
           color={ tintColor }
         />

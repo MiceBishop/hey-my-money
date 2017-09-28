@@ -39,6 +39,7 @@ const DashboardNavigator = TabNavigator({
     Friends: {screen: Friends},
 }, {
   swipeEnabled: true,
+  tabBarPosition: 'top',
   tabBarOptions: {
     activeTintColor: colors.BACKGROUND,
     style: {

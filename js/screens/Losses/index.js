@@ -8,11 +8,11 @@ import Icon from 'react-native-vector-icons/Ionicons'
 
 export default class Losses extends Component {
   static navigationOptions = {
-    tabBarLabel: 'Dettes',
+    tabBarLabel: 'Mes dettes',
     tabBarIcon: ({ tintColor }) => {
       return(
         <Icon
-          name={ Platform === 'ios' ? 'ios-trending-up' : 'md-trending-up' }
+          name={ Platform.OS === 'ios' ? 'ios-trending-up' : 'md-trending-up' }
           size={25}
           color={ tintColor }
         />
