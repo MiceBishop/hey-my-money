@@ -19,13 +19,15 @@ import Home from '~screens/Home'
 import Earnings from '~screens/Earnings'
 import Losses from '~screens/Losses'
 import Friends from '~screens/Friends'
+import FriendDetails from '~screens/FriendDetails'
 import colors from '~theme/colors'
 
 class App extends Component {
   render() {
+    const { navigation } = this.props
     return(
       <View>
-        <StatusBar backgroundColor={colors.BACKGROUND} />
+        <StatusBar style={{flex: 1}} backgroundColor={colors.BACKGROUND} />
         <HeyMyMoney />
       </View>
     )
@@ -56,6 +58,9 @@ const HeyMyMoney = StackNavigator({
     screen: Welcome,
     navigationOptions: { header: null }
   },
+  FriendDetails: {
+    screen: FriendDetails,
+  },
   Dashboard: {
     screen: DashboardNavigator,
     navigationOptions: {
@@ -71,6 +76,6 @@ const HeyMyMoney = StackNavigator({
   },
 })
 
-AppRegistry.registerComponent('HeyMyMoney', () => HeyMyMoney);
+export default App
 
-export default DashboardNavigator
+AppRegistry.registerComponent('HeyMyMoney', () => HeyMyMoney);

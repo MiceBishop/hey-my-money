@@ -20,6 +20,8 @@ import Home from '~screens/Home'
 import Earnings from '~screens/Earnings'
 import Losses from '~screens/Losses'
 import Friends from '~screens/Friends'
+import FriendDetails from '~screens/FriendDetails'
+
 import colors from '~theme/colors'
 
 class App extends Component {
@@ -60,10 +62,13 @@ const DashboardNavigator = TabNavigator({
   }
 })
 
-export const HeyMyMoney = StackNavigator({
+const HeyMyMoney = StackNavigator({
   Welcome: {
     screen: Welcome,
     navigationOptions: { header: null }
+  },
+  FriendDetails: {
+    screen: FriendDetails,
   },
   Dashboard: {
     screen: DashboardNavigator,
