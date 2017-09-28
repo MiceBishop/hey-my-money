@@ -6,7 +6,8 @@ import {
 import FriendsList from './components/FriendsList'
 import colors from '~theme/colors'
 import ActionButton from 'react-native-action-button'
-import Icon from 'react-native-vector-icons/Ionicons';
+import Icon from 'react-native-vector-icons/Ionicons'
+import { NavigationActions } from 'react-navigation'
 
 const data = [
   {
@@ -23,6 +24,38 @@ const data = [
   },
   {
     id: 4,
+    name: "Mohamed Rachid Wendpagnagde COMPAORE"
+  },
+  {
+    id: 5,
+    name: "Modoulo Boly SOW"
+  },
+  {
+    id: 6,
+    name: "Arame MBENGUE"
+  },
+  {
+    id: 7,
+    name: "Serigne Saalihou Mbacké NDIAYE"
+  },
+  {
+    id: 8,
+    name: "Mohamed Rachid Wendpagnagde COMPAORE"
+  },
+  {
+    id: 9,
+    name: "Modoulo Boly SOW"
+  },
+  {
+    id: 10,
+    name: "Arame MBENGUE"
+  },
+  {
+    id: 11,
+    name: "Serigne Saalihou Mbacké NDIAYE"
+  },
+  {
+    id: 12,
     name: "Mohamed Rachid Wendpagnagde COMPAORE"
   }
 ];
@@ -44,13 +77,20 @@ export default class Friends extends Component {
 
   }
   render() {
+
+    const navigateAction = NavigationActions.navigate({
+      routeName: 'FriendDetails',
+      params: {},
+    })
+    
     return(
       <View style={styles.container}>
-        <FriendsList data={data} />
+        <FriendsList onPress={() => this.props.navigation.dispatch(navigateAction)} data={data} />
          <ActionButton
-          buttonColor={colors.BACKGROUND}
+          buttonColor={'#0091EA'}
           icon={<Icon color={colors.SECONDARY} name={Platform.OS === 'ios' ? 'ios-person-add' : 'md-person-add'} size={30} />}
           onPress={() => {}}
+          useNativeFeedback={true}
         />
       </View>
     )
@@ -60,7 +100,7 @@ export default class Friends extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'white'
+    backgroundColor: 'white',
   },
   actionButtonIcon: {
 

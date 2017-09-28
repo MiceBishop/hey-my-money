@@ -8,6 +8,7 @@ import FriendItem from './FriendItem'
 import PropTypes from 'prop-types'
 
 export default class Friend extends React.PureComponent {
+  
 //   _onPress = () => {
 //     this.props.onPressItem(this.props.id);
 //   };
@@ -15,11 +16,12 @@ export default class Friend extends React.PureComponent {
   render() {
     const { item } = this.props;
     return (
-      <FriendItem item={item} />
+      <FriendItem {...this.props} item={item} />
     )
   }
 }
 
 Friend.propTypes = {
-    item: PropTypes.object.isRequired
+    item: PropTypes.object.isRequired,
+    onPress: PropTypes.func.isRequired
 }

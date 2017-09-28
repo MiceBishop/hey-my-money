@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import {
   FlatList, View, Platform
  } from 'react-native'
- import PropTypes from 'prop-types'
+import PropTypes from 'prop-types'
 import Friend from './Friend.js'
 
 
@@ -23,8 +23,8 @@ export default class FriendsList extends React.PureComponent {
 
   _renderItem = ({item}) => (
     <Friend
-      /*onPressItem={this._onPressItem}
-      selected={!!this.state.selected.get(item.id)}*/
+      {...this.props}
+      /*selected={!!this.state.selected.get(item.id)}*/
       item={item}
     />
   );
@@ -34,7 +34,7 @@ export default class FriendsList extends React.PureComponent {
       <View
         style={{
           marginLeft: Platform.OS === 'android' ? 50 : 0,
-          borderBottomColor: 'black',
+          borderBottomColor: '#E0E0E0',
           borderBottomWidth: 1,
         }}
       />

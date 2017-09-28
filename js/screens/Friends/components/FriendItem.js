@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import {
-  View, Text, Platform, TouchableHighlight, StyleSheet, TouchableNativeFeedback
+  View, Text, Platform, TouchableOpacity, TouchableHighlight, StyleSheet, TouchableNativeFeedback
 } from 'react-native'
 
 import PropTypes from 'prop-types'
@@ -25,38 +25,36 @@ class Item extends Component {
         <View style={styles.textContainer}>
           <Text style={styles.text}>{item.name}</Text>
         </View>
-          
-          <View style={styles.rightContainer}>
+
+        <View style={styles.delContainer}>
+          <TouchableOpacity activeOpacity={0.3}>
             <Icon
-              style={styles.icon}
-              name={ Platform.OS === 'ios' ? 'ios-arrow-forward' : '' }
-              size={30}
-              color='grey'
+              style={styles.delIcon}
+              name={ Platform.OS === 'ios' ? 'ios-trash' : 'md-trash' }
+              size={40}
+              color='red'
             />
-          </View>
+          </TouchableOpacity>
+        </View>
       </View>
     )
   }
 }
 
 export default class FriendItem extends Component {
-  handlePress() {
-
-  }
-
   render() {
     const { item } = this.props
     return(
 
       Platform.OS === 'ios' ?
-      <TouchableHighlight underlayColor={colors.RIPPLEGREY} activeOpacity={0.6} onPress={this.handlePress}>
+      <TouchableHighlight underlayColor={colors.RIPPLEGREY} activeOpacity={0.6} {...this.props}>
         <View>
           <Item item={item}/>
         </View>
       </TouchableHighlight> :
       <TouchableNativeFeedback
         background={TouchableNativeFeedback.SelectableBackground()}
-        onPress={this.handlePress}
+        {...this.props}
       >
         <View>
           <Item item={item}/>
@@ -86,13 +84,18 @@ const styles = StyleSheet.create({
   },
   textContainer: {
     justifyContent: 'center',
-    width: 280
+    width: 270
   },
-  rightContainer: {
-    justifyContent: 'center'
+  delContainer: {
+    justifyContent: 'center',
+  },
+  delIcon: {
+    height: 40,
+    width: 40,
+    marginRight: 30
   }
 })
 
 FriendItem.propTypes = {
-    item: PropTypes.object.isRequired
+    item: PropTypes.object.isRequired,
 }
