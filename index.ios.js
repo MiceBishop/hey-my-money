@@ -19,7 +19,8 @@ import Home from '~screens/Home'
 import Earnings from '~screens/Earnings'
 import Losses from '~screens/Losses'
 import Friends from '~screens/Friends'
-import FriendDetails from '~screens/FriendDetails'
+import FriendDetails from '~screens/Friends/FriendDetails'
+import LossDetails from '~screens/Losses/LossDetails'
 import colors from '~theme/colors'
 
 class App extends Component {
@@ -60,6 +61,9 @@ const HeyMyMoney = StackNavigator({
   },
   FriendDetails: {
     screen: FriendDetails,
+  },
+  LossDetails: {
+    screen: LossDetails,
   },
   Dashboard: {
     screen: DashboardNavigator,

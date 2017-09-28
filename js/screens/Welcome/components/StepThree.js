@@ -29,8 +29,10 @@ export default class StepThree extends Component {
         </View>
         <View style={styles.part}>
           <MyButton
+            width={150}
             title="Commencer"
-            titleColor={Platform.OS === 'android' ? colors.BACKGROUND : colors.SECONDARY }
+            color={colors.SECONDARY}
+            titleColor={ Platform.OS === 'android' ? colors.BACKGROUND : colors.SECONDARY }
             onPress={this.props.onPageChange}
           />
         </View>

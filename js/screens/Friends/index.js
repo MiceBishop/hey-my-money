@@ -9,6 +9,7 @@ import ActionButton from 'react-native-action-button'
 import Icon from 'react-native-vector-icons/Ionicons'
 import { NavigationActions } from 'react-navigation'
 
+ // ============ Static Data ============= //
 const data = [
   {
     id: 1,
@@ -87,10 +88,10 @@ export default class Friends extends Component {
       <View style={styles.container}>
         <FriendsList onPress={() => this.props.navigation.dispatch(navigateAction)} data={data} />
          <ActionButton
-          buttonColor={'#0091EA'}
+          buttonColor={'#81D4FA'}
           icon={<Icon color={colors.SECONDARY} name={Platform.OS === 'ios' ? 'ios-person-add' : 'md-person-add'} size={30} />}
           onPress={() => {}}
-          useNativeFeedback={true}
+          fixNativeFeedbackRadius={true}
         />
       </View>
     )
@@ -101,6 +102,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: 'white',
+    padding: 10,
   },
   actionButtonIcon: {
 

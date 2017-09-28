@@ -45,8 +45,10 @@ export default class StepTwo extends Component {
         </View>
         <View style={styles.part}>
           <MyButton
+            width={150}
             title="Suivant"
-            titleColor={Platform.OS === 'android' ? colors.BACKGROUND : colors.SECONDARY }
+            color={colors.SECONDARY}
+            titleColor={ Platform.OS === 'android' ? colors.BACKGROUND : colors.SECONDARY }
             onPress={this.handlePress.bind(this)}
           />
         </View>

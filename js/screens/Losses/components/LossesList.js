@@ -3,10 +3,10 @@ import {
   FlatList, View, Platform
  } from 'react-native'
 import PropTypes from 'prop-types'
-import Friend from './Friend.js'
+import Loss from './Loss.js'
 
 
-export default class FriendsList extends React.PureComponent {
+export default class LossesList extends React.PureComponent {
   // state = {selected: (new Map(): Map<string, boolean>)};
 
   _keyExtractor = (item, index) => item.id;
@@ -22,7 +22,7 @@ export default class FriendsList extends React.PureComponent {
   // };
 
   _renderItem = ({item}) => (
-    <Friend
+    <Loss
       {...this.props}
       /*selected={!!this.state.selected.get(item.id)}*/
       item={item}
@@ -48,12 +48,11 @@ export default class FriendsList extends React.PureComponent {
         keyExtractor={this._keyExtractor}
         renderItem={this._renderItem}
         ItemSeparatorComponent={this._renderSeparator}
-        {...this.props}
       />
     );
   }
 }
 
-FriendsList.propTypes = {
+LossesList.propTypes = {
   data: PropTypes.array.isRequired
 }

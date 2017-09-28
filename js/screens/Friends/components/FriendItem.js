@@ -25,17 +25,6 @@ class Item extends Component {
         <View style={styles.textContainer}>
           <Text style={styles.text}>{item.name}</Text>
         </View>
-
-        <View style={styles.delContainer}>
-          <TouchableOpacity activeOpacity={0.3}>
-            <Icon
-              style={styles.delIcon}
-              name={ Platform.OS === 'ios' ? 'ios-trash' : 'md-trash' }
-              size={40}
-              color='red'
-            />
-          </TouchableOpacity>
-        </View>
       </View>
     )
   }
@@ -68,32 +57,18 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: 'row',
-    height: 70
   },
   icon: {
-    margin: 5
   },
   text: {
     fontSize: 15,
-    fontWeight: '700',
-    color: 'black'
+    fontWeight: '500',
+    color: 'black',
+    padding: 20
   },
   iconContainer: {
     justifyContent: 'center',
-    width: 50
   },
-  textContainer: {
-    justifyContent: 'center',
-    width: 270
-  },
-  delContainer: {
-    justifyContent: 'center',
-  },
-  delIcon: {
-    height: 40,
-    width: 40,
-    marginRight: 30
-  }
 })
 
 FriendItem.propTypes = {

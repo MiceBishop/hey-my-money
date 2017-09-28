@@ -8,6 +8,7 @@
     "storybook": "storybook start -p 7007"
   },
   "dependencies": {
+    "date-format": "^1.1.0",
     "react": "16.0.0-alpha.12",
     "react-native": "0.48.4",
     "react-native-action-button": "^2.8.0",
