@@ -31,7 +31,7 @@ class App extends Component {
     const { navigation } = this.props
     return(
       <View style={{flex: 1}}>
-        <StatusBar backgroundColor={colors.BACKGROUND} />
+        <StatusBar backgroundColor='#01579B' />
         <HeyMyMoney />
       </View>
     )
@@ -95,4 +95,4 @@ const HeyMyMoney = StackNavigator({
 
 export default App
 
-AppRegistry.registerComponent('HeyMyMoney', () => App);
+AppRegistry.registerComponent('HeyMyMoney', () => DashboardNavigator);

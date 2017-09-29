@@ -29,7 +29,7 @@ class App extends Component {
     const { navigation } = this.props
     return(
       <View>
-        <StatusBar style={{flex: 1}} backgroundColor={colors.BACKGROUND} />
+        <StatusBar style={{flex: 1}} backgroundColor='#01579B' />
         <HeyMyMoney />
       </View>
     )

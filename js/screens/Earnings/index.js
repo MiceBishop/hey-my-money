@@ -6,6 +6,7 @@ import {
 import EarningsList from './components/EarningsList'
 import colors from '~theme/colors'
 import Icon from 'react-native-vector-icons/Ionicons'
+import MaterialIcon from 'react-native-vector-icons/MaterialIcons'
 import { NavigationActions } from 'react-navigation'
 import ActionButton from 'react-native-action-button'
 import DateFormatter from 'date-format'
@@ -87,8 +88,8 @@ export default class Earnings extends Component {
       <View style={styles.container}>
         <EarningsList onPress={() => this.props.navigation.dispatch(navigateAction)} data={data} />
          <ActionButton
-          buttonColor={'#81D4FA'}
-          icon={<Icon color={colors.SECONDARY} name={Platform.OS === 'ios' ? 'ios-add' : 'md-add'} size={30} />}
+          buttonColor={'green'}
+          icon={<MaterialIcon color='white' name='note-add' size={30} />}
           onPress={() => {}}
           fixNativeFeedbackRadius={true}
         />

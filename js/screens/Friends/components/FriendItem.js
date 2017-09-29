@@ -65,7 +65,7 @@ const styles = StyleSheet.create({
     fontSize: 15,
     fontWeight: '500',
     color: 'black',
-    padding: 20
+    padding: 20,
   },
   iconContainer: {
     justifyContent: 'center',
