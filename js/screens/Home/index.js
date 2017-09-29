@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import {
-    Text, StyleSheet, View, Button, Platform
+    Text, StyleSheet, View, Button, Platform, ScrollView
 } from 'react-native'
 
 import colors from '~theme/colors'
@@ -11,7 +11,7 @@ import ActionButton from 'react-native-action-button'
 class Dash extends Component {
   render() {
     return(
-      <View style={styles.innerContainer}>
+      <ScrollView style={styles.innerContainer}>
         <View style={styles.welcomeContainer}>
           <Text style={styles.text}>
             Bonjour Papa Seynou Sy NDIAYE !{'\n'}Ici vous pourrez avoir une vue globale de votre solde
@@ -49,7 +49,7 @@ class Dash extends Component {
             <Text style={styles.amountPos}>+5000</Text>
           </View>
         </View>
-      </View>
+      </ScrollView>
     )
   }
 }
@@ -118,7 +118,7 @@ const styles = StyleSheet.create({
     color: 'red'
   },
   div: {
-    height: "20%",
+    height: 80,
     flexDirection: 'row',
     alignItems: 'center'
   },
