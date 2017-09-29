@@ -22,6 +22,7 @@ import Losses from '~screens/Losses'
 import Friends from '~screens/Friends'
 import FriendDetails from '~screens/Friends/FriendDetails'
 import LossDetails from '~screens/Losses/LossDetails'
+import EarningDetails from '~screens/Earnings/EarningDetails'
 
 import colors from '~theme/colors'
 
@@ -73,6 +74,9 @@ const HeyMyMoney = StackNavigator({
   },
   LossDetails: {
     screen: LossDetails,
+  },
+  EarningDetails: {
+    screen: EarningDetails,
   },
   Dashboard: {
     screen: DashboardNavigator,

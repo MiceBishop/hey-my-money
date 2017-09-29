@@ -20,7 +20,7 @@ class Item extends Component {
         </View>
         <View style={styles.footer}>
           <Icon name={Platform.OS === 'ios' ? 'ios-cash-outline' : 'md-cash'} size={24} color='black' />
-          <Text style={styles.amount}>-{item.amount}</Text>
+          <Text style={styles.amount}>+{item.amount}</Text>
         </View>
         <View style={styles.date}>
           <Icon name={Platform.OS === 'ios' ? 'ios-calendar-outline' : 'md-calendar'} size={24} color='black' />
@@ -29,7 +29,7 @@ class Item extends Component {
             <MyButton
               onPress={() => {}}
               width={120}
-              title="Payer"
+              title="Récupérer"
               titleColor={Platform.OS === 'ios' ? colors.BACKGROUND: colors.SECONDARY}
               color={colors.BACKGROUND}
             />
@@ -40,7 +40,7 @@ class Item extends Component {
   }
 }
 
-export default class LossItem extends Component {
+export default class EarningItem extends Component {
   render() {
     const { item } = this.props
     return(
@@ -91,7 +91,7 @@ const styles = StyleSheet.create({
   amount: {
     fontSize: 17,
     fontWeight: 'bold',
-    color: 'red',
+    color: 'green',
     paddingLeft: 10,
   },
   createdAt: {
@@ -100,6 +100,6 @@ const styles = StyleSheet.create({
   }
 })
 
-LossItem.propTypes = {
+EarningItem.propTypes = {
     item: PropTypes.object.isRequired,
 }

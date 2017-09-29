@@ -1,11 +1,65 @@
 import React, { Component } from 'react'
 import {
-    Text, View, StyleSheet, Button, Platform
+    Text, StyleSheet, View, Button, Platform
 } from 'react-native'
 
+import EarningsList from './components/EarningsList'
 import colors from '~theme/colors'
+import Icon from 'react-native-vector-icons/Ionicons'
+import { NavigationActions } from 'react-navigation'
+import ActionButton from 'react-native-action-button'
+import DateFormatter from 'date-format'
 
-import Icon from 'react-native-vector-icons/Ionicons';
+const monthNames = ["Jan", "Fev", "Mars", "Avr", "Mai", "Juin",
+  "Juil", "Aout", "Sept", "Oct", "Nov", "Déc"
+];
+
+const dayNames = ["Dim", "Lun", "Mar", "Mer", "Jeu", "Ven", "Sam"]
+
+const today = new Date()
+
+const data = [
+  {
+    id: 1,
+    name: "Modoulo Boly SOW",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac condimentum dui,"+
+    "quis venenatis sapien. Suspendisse potenti. Ut enim ante, posuere dignissim consectetur sed,"+
+    "vestibulum ut dolor. Maecenas malesuada et purus ac porttitor.Donec vulputate risus mauris, et"+
+    "tincidunt magna euismod vel.",
+    amount: 1000,
+    createdAt: dayNames[today.getDay()] + ', ' + today.getDate() + ' ' + monthNames[today.getMonth()] + ' ' + today.getFullYear()
+  },
+  {
+    id: 2,
+    name: "Arame MBENGUE",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac condimentum dui,"+
+    "quis venenatis sapien. Suspendisse potenti. Ut enim ante, posuere dignissim consectetur sed,"+
+    "vestibulum ut dolor. Maecenas malesuada et purus ac porttitor.Donec vulputate risus mauris, et"+
+    "tincidunt magna euismod vel.",
+    amount: 1000,
+    createdAt: dayNames[today.getDay()] + ', ' + today.getDate() + ' ' + monthNames[today.getMonth()] + ' ' + today.getFullYear()
+  },
+  {
+    id: 3,
+    name: "Serigne Saalihou Mbacké NDIAYE",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac condimentum dui,"+
+    "quis venenatis sapien. Suspendisse potenti. Ut enim ante, posuere dignissim consectetur sed,"+
+    "vestibulum ut dolor. Maecenas malesuada et purus ac porttitor.Donec vulputate risus mauris, et"+
+    "tincidunt magna euismod vel.",
+    amount: 1000,
+    createdAt: dayNames[today.getDay()] + ', ' + today.getDate() + ' ' + monthNames[today.getMonth()] + ' ' + today.getFullYear()
+  },
+  {
+    id: 4,
+    name: "Mohamed Rachid Wenpagnagde COMPAORE",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac condimentum dui,"+
+    "quis venenatis sapien. Suspendisse potenti. Ut enim ante, posuere dignissim consectetur sed,"+
+    "vestibulum ut dolor. Maecenas malesuada et purus ac porttitor.Donec vulputate risus mauris, et"+
+    "tincidunt magna euismod vel.",
+    amount: 1000,
+    createdAt: dayNames[today.getDay()] + ', ' + today.getDate() + ' ' + monthNames[today.getMonth()] + ' ' + today.getFullYear()
+  },
+];
 
 export default class Earnings extends Component {
   static navigationOptions = {
@@ -13,7 +67,7 @@ export default class Earnings extends Component {
     tabBarIcon: ({ tintColor }) => {
       return(
         <Icon
-          name={ Platform.OS === 'ios' ? 'ios-cash' : 'md-cash' }
+          name={ Platform.OS === 'ios' ? 'ios-arrow-round-down' : 'md-arrow-round-down' }
           size={25}
           color={ tintColor }
         />
@@ -21,21 +75,31 @@ export default class Earnings extends Component {
     }
   }
   handlePress() {
-
+    
   }
   render() {
-    return(
-      <View style={styles.home}>
-        <Text>Mes Gains</Text>
+    const navigateAction = NavigationActions.navigate({
+      routeName: 'EarningDetails',
+      params: {},
+    })
+    
+    return (
+      <View style={styles.container}>
+        <EarningsList onPress={() => this.props.navigation.dispatch(navigateAction)} data={data} />
+         <ActionButton
+          buttonColor={'#81D4FA'}
+          icon={<Icon color={colors.SECONDARY} name={Platform.OS === 'ios' ? 'ios-add' : 'md-add'} size={30} />}
+          onPress={() => {}}
+          fixNativeFeedbackRadius={true}
+        />
       </View>
     )
   }
 }
 
 const styles = StyleSheet.create({
-  home: {
+  container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    backgroundColor: colors.SECONDARY
   }
 })

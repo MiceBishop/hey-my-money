@@ -4,14 +4,14 @@ import {
 } from 'react-native'
 import PropTypes from 'prop-types'
 
-export default class FriendDetails extends React.Component {
+export default class EarningDetails extends React.Component {
   static navigationOptions = {
     title: 'Détails',
   }
   render() {
     return(
       <View style={styles.container}>
-        <Text>Détails de l'utilisateur</Text>
+        <Text>Détails de la dette</Text>
       </View>
     )
   }
@@ -25,6 +25,6 @@ const styles = StyleSheet.create({
   }
 })
 
-FriendDetails.propTypes = {
+EarningDetails.propTypes = {
   item: PropTypes.object
 }
