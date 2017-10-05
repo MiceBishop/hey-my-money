@@ -95,4 +95,4 @@ const HeyMyMoney = StackNavigator({
 
 export default App
 
-AppRegistry.registerComponent('HeyMyMoney', () => DashboardNavigator);
+AppRegistry.registerComponent('HeyMyMoney', () => App);
