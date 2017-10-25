@@ -86,7 +86,7 @@ export default class Losses extends Component {
     
     return (
       <View style={styles.container}>
-        <LossesList onPress={() => this.props.navigation.dispatch(navigateAction)} data={data} />
+        <LossesList onPress={(item) => this.props.navigation.navigate('LossDetails', {item})} data={data} />
          <ActionButton
           buttonColor={'red'}
           icon={<MaterialIcon color='white' name='note-add' size={30} />}

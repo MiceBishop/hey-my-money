@@ -11,7 +11,8 @@ export default class EarningDetails extends React.Component {
   render() {
     return(
       <View style={styles.container}>
-        <Text>Détails de la dette</Text>
+        <Text>Détails du gain de {this.props.navigation.state.params.item.name}</Text>
+        <Text>{this.props.navigation.state.params.item.description}</Text>
       </View>
     )
   }

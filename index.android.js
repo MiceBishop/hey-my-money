@@ -25,6 +25,7 @@ import LossDetails from '~screens/Losses/LossDetails'
 import EarningDetails from '~screens/Earnings/EarningDetails'
 
 import colors from '~theme/colors'
+import CurrentItemStore from './js/mobx/currentItemStore'
 
 class App extends Component {
   render() {

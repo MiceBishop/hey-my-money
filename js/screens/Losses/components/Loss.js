@@ -8,15 +8,10 @@ import LossItem from './LossItem'
 import PropTypes from 'prop-types'
 
 export default class Loss extends React.PureComponent {
-  
-//   _onPress = () => {
-//     this.props.onPressItem(this.props.id);
-//   };
-
   render() {
     const { item } = this.props;
     return (
-      <LossItem {...this.props} item={item} />
+      <LossItem {...this.props} item={item} onPress={ () => this.props.onPress(item)} />
     )
   }
 }

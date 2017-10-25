@@ -75,9 +75,7 @@ export default class Earnings extends Component {
       )
     }
   }
-  handlePress() {
-    
-  }
+
   render() {
     const navigateAction = NavigationActions.navigate({
       routeName: 'EarningDetails',
@@ -86,7 +84,7 @@ export default class Earnings extends Component {
     
     return (
       <View style={styles.container}>
-        <EarningsList onPress={() => this.props.navigation.dispatch(navigateAction)} data={data} />
+        <EarningsList onPress={(item) => this.props.navigation.navigate('EarningDetails', {item})} data={data} />
          <ActionButton
           buttonColor={'green'}
           icon={<MaterialIcon color='white' name='note-add' size={30} />}

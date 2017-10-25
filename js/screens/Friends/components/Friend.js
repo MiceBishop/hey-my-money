@@ -1,27 +1,26 @@
-import React, { Component } from 'react'
-import {
-    Text
-} from 'react-native'
+import React, { Component } from "react";
+import { Text } from "react-native";
 
-import FriendItem from './FriendItem'
+import FriendItem from "./FriendItem";
 
-import PropTypes from 'prop-types'
+import PropTypes from "prop-types";
+import { observer } from "mobx-react/native";
 
-export default class Friend extends React.PureComponent {
-  
-//   _onPress = () => {
-//     this.props.onPressItem(this.props.id);
-//   };
-
+@observer
+export default class Friend extends Component {
   render() {
     const { item } = this.props;
     return (
-      <FriendItem {...this.props} item={item} />
-    )
+      <FriendItem
+        {...this.props}
+        onPress={() => this.props.onPress(item)}
+        item={item}
+      />
+    );
   }
 }
 
 Friend.propTypes = {
-    item: PropTypes.object.isRequired,
-    onPress: PropTypes.func.isRequired
-}
+  item: PropTypes.object.isRequired,
+  onPress: PropTypes.func.isRequired
+};

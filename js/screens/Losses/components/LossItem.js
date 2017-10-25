@@ -46,7 +46,7 @@ export default class LossItem extends Component {
     return(
 
       Platform.OS === 'ios' ?
-      <TouchableHighlight underlayColor={colors.RIPPLEGREY} activeOpacity={0.6} {...this.props}>
+      <TouchableHighlight underlayColor={colors.RIPPLEGREY} activeOpacity={0.6} {...this.props} onPress={this.props.onPress} >
         <View>
           <Item item={item}/>
         </View>
@@ -54,6 +54,7 @@ export default class LossItem extends Component {
       <TouchableNativeFeedback
         background={TouchableNativeFeedback.SelectableBackground()}
         {...this.props}
+        onPress={this.props.onPress}
       >
         <View>
           <Item item={item}/>
