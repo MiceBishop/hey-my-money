@@ -10,6 +10,8 @@ import {
   StatusBar,
   View,
   Text,
+  TouchableOpacity,
+  Platform
 } from 'react-native';
 
 import { StackNavigator, TabNavigator } from 'react-navigation'
@@ -23,6 +25,8 @@ import Friends from '~screens/Friends'
 import FriendDetails from '~screens/Friends/FriendDetails'
 import LossDetails from '~screens/Losses/LossDetails'
 import EarningDetails from '~screens/Earnings/EarningDetails'
+import EarningForm from "~screens/Earnings/components/EarningForm"
+import Settings from "~screens/Settings";
 
 import colors from '~theme/colors'
 import CurrentItemStore from './js/mobx/currentItemStore'
@@ -72,12 +76,40 @@ const HeyMyMoney = StackNavigator({
   },
   FriendDetails: {
     screen: FriendDetails,
+    navigationOptions: {
+      headerStyle: {backgroundColor: colors.BACKGROUND },
+      headerTintColor: colors.SECONDARY,
+    }
   },
   LossDetails: {
     screen: LossDetails,
+    navigationOptions: {
+      headerStyle: {backgroundColor: colors.BACKGROUND },
+      headerTintColor: colors.SECONDARY,
+    }
   },
   EarningDetails: {
     screen: EarningDetails,
+    navigationOptions: {
+      headerStyle: {backgroundColor: colors.BACKGROUND },
+      headerTintColor: colors.SECONDARY,
+    }
+  },
+  Settings: {
+    screen: Settings,
+    navigationOptions: {
+      title: "Paramètres",
+      headerStyle: { backgroundColor: colors.BACKGROUND },
+      headerTintColor: colors.SECONDARY
+    }
+  },
+  EarningForm: {
+    screen: EarningForm,
+    navigationOptions: {
+      title: "Ajouter un gain",
+      headerStyle: { backgroundColor: colors.BACKGROUND },
+      headerTintColor: colors.SECONDARY
+    }
   },
   Dashboard: {
     screen: DashboardNavigator,
@@ -85,11 +117,20 @@ const HeyMyMoney = StackNavigator({
       title: "Sama Xaliss",
       headerStyle: {backgroundColor: colors.BACKGROUND },
       headerTintColor: colors.SECONDARY,
-      headerLeft: () => {
-        return (
-          <Icon name="md-settings" size={24} color="white" />
-        )
-      }
+      headerRight: (
+        <TouchableOpacity
+          style={{
+            alignItems: "center",
+            justifyContent: "center",
+            width: 40,
+            height: 40,
+            backgroundColor: colors.BACKGROUND,
+            borderRadius: 40
+          }}
+        >
+          <Icon name={Platform.OS === "ios" ? "ios-cog" : "md-cog"} size={30} color={colors.SECONDARY} />
+        </TouchableOpacity>
+      )
     },
   },
 })

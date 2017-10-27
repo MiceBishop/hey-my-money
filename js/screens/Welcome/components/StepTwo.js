@@ -34,11 +34,11 @@ export default class StepTwo extends Component {
         </View>
         <View style={styles.part}>
           <CustomTextInput
-            icon='account-circle'
+            icon={Platform.OS === "ios" ? "ios-contact" : "md-contact"}
             placeholder="Pseudo"
           />
           <CustomTextInput
-            icon='email'
+            icon={Platform.OS === "ios" ? "ios-mail" : "md-mail"}
             keyboardType='email-address'
             placeholder="Email"
           />

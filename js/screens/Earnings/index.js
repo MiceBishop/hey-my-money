@@ -88,7 +88,7 @@ export default class Earnings extends Component {
          <ActionButton
           buttonColor={'green'}
           icon={<MaterialIcon color='white' name='note-add' size={30} />}
-          onPress={() => {}}
+          onPress={() => this.props.navigation.navigate("EarningForm")}
           fixNativeFeedbackRadius={true}
         />
       </View>

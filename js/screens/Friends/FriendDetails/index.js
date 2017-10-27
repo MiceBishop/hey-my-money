@@ -113,15 +113,15 @@ export default class FriendDetails extends React.Component {
         />
         <View
           style={{
-            borderBottomColor: "#BDBDBD",
-            borderBottomWidth: 1
+            borderBottomColor: colors.RIPPLEGREY,
+            borderBottomWidth: 4
           }}
         />
         <MyButton
           title="Modifier Contact"
-          color={colors.BACKGROUND}
+          color={colors.SECONDARY}
           titleColor={
-            Platform.OS === "ios" ? colors.BACKGROUND : colors.SECONDARY
+            Platform.OS === "ios" ? colors.BACKGROUND : colors.BACKGROUND
           }
           width="auto"
           style={{ marginTop: 2 }}
@@ -129,8 +129,8 @@ export default class FriendDetails extends React.Component {
         />
         <MyButton
           title="Supprimer Contact"
-          color="red"
-          titleColor={Platform.OS === "ios" ? "red" : colors.SECONDARY}
+          color={colors.SECONDARY}
+          titleColor={Platform.OS === "ios" ? "red" : "red"}
           width="auto"
           style={{ marginTop: 2 }}
           onPress={() => {}}

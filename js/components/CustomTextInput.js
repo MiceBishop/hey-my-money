@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { TextInput, StyleSheet, View } from 'react-native';
 import colors from '~theme/colors';
-import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import Icon from 'react-native-vector-icons/Ionicons';
 import PropTypes from 'prop-types';
 
 export default class CustomTextInput extends Component {
@@ -10,7 +10,7 @@ export default class CustomTextInput extends Component {
         return(
             <View style={styles.container}>
                 <View style={styles.iconContainer} >
-                    <MaterialIcons name={this.props.icon} color='white' size={25} />
+                    <Icon name={this.props.icon} color='white' size={25} />
                 </View>
                 <TextInput
                     {...this.props}
