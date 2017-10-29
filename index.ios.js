@@ -19,7 +19,9 @@ import FriendDetails from "~screens/Friends/FriendDetails";
 import LossDetails from "~screens/Losses/LossDetails";
 import colors from "~theme/colors";
 import EarningDetails from "~screens/Earnings/EarningDetails";
-import EarningForm from "~screens/Earnings/components/EarningForm"
+import EarningForm from "~screens/Earnings/components/EarningForm";
+import LossForm from "~screens/Losses/components/LossForm";
+import HistoryTransacs from "~screens/HistoryTransacs";
 import Settings from "~screens/Settings";
 
 class App extends Component {
@@ -39,7 +41,7 @@ const DashboardNavigator = TabNavigator(
     Home: { screen: Home },
     Earnings: { screen: Earnings },
     Losses: { screen: Losses },
-    Friends: { screen: Friends }
+    // Friends: { screen: Friends }
   },
   {
     swipeEnabled: true,
@@ -90,10 +92,26 @@ const HeyMyMoney = StackNavigator({
       headerTintColor: colors.SECONDARY
     }
   },
+  HistoryTransacs: {
+    screen: HistoryTransacs,
+    navigationOptions: {
+      title: "Historique des transactions",
+      headerStyle: { backgroundColor: colors.BACKGROUND },
+      headerTintColor: colors.SECONDARY
+    }
+  },
   EarningForm: {
     screen: EarningForm,
     navigationOptions: {
       title: "Ajouter un gain",
+      headerStyle: { backgroundColor: colors.BACKGROUND },
+      headerTintColor: colors.SECONDARY
+    }
+  },
+  LossForm: {
+    screen: LossForm,
+    navigationOptions: {
+      title: "Ajouter une dette",
       headerStyle: { backgroundColor: colors.BACKGROUND },
       headerTintColor: colors.SECONDARY
     }

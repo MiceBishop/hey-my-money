@@ -3,10 +3,10 @@ import { View } from "react-native";
 import AddingForm from "~components/AddingForm";
 import colors from "~theme/colors";
 
-export default class EarningForm extends Component {
+export default class LossForm extends Component {
   render() {
     return (
-      <AddingForm colorType="green" />
+      <AddingForm colorType="red" />
     );
   }
 }

@@ -22,10 +22,11 @@ export default class StepThree extends Component {
         <View style={styles.part}>
           <Image source={require('~assets/images/logo-white.png')} style={styles.logo} />
           <Text style={styles.quote}>
-              Boly: "Seynou ! Tu me dois pas de l'argent par hasard ?"{'\n\n'}
-              Seynou: "Non Boly, je sais que tu es pauvre mais tu me le refera pas cette fois-ci, j'ai Sama Xaliss" !{'\n\n'}
-              Boly: " :'( Quel flop !'"
-            </Text>
+              Qui me doit de l'argent ?{"\n"}
+              À qui dois-tu de l'argent ?{"\n"}
+              Ne vous cassez plus la tête !{"\n"}
+              Avec Sama Xaliss, votre smartphone devient votre portefeuille !{"\n"}
+          </Text>
         </View>
         <View style={styles.part}>
           <MyButton
@@ -51,7 +52,7 @@ const styles = StyleSheet.create({
   quote: {
     color: colors.SECONDARY,
     fontFamily: fonts.PRIMARY,
-    fontSize: 15,
+    fontSize: 20,
     textAlign: 'center',
   },
   background: {

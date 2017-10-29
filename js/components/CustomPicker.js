@@ -1,58 +1,29 @@
-import React, { Component } from 'react';
-import { Picker, StyleSheet, View, Platform } from 'react-native';
-import Icon from 'react-native-vector-icons/Ionicons';
+import React, { Component } from "react";
+import { StyleSheet, View, Platform, PickerIOS, TextInput } from "react-native";
+import ModalPicker from "react-native-modal-picker";
+import Icon from "react-native-vector-icons/Ionicons";
+import CustomTextInput from "~components/CustomTextInput";
+import CustomPickerAndroid from "~components/CustomPickerAndroid";
+import colors from "~theme/colors";
 
 export default class CustomPicker extends Component {
-  static defaultProps = {
-    items: []
-  };
+  constructor(props) {
+    super(props);
+  }
   render() {
-    const { items } = this.props;
     return (
-      <View style={styles.container}>
-        <View style={styles.icon}>
-          <Icon name={this.props.icon} color="white" size={25} />
-        </View>
-        <Picker
-          itemStyle={styles.item}
-          {...this.props}
-          style={[styles.picker, this.props.style]}
-        >
-          {items.map(item =>
-            <Picker.Item
-              label={item.label}
-              value={item.value}
-              key={item.value}
-            />
-          )}
-        </Picker>
-      </View>
+      Platform.OS === "ios" ? (
+      <ModalPicker
+        style={{height: 50}}
+        sectionTextStyle={{color: colors.SECONDARY}}
+        data={this.props.items}
+        initValue={this.props.label}
+        onChange={option => {}} />
+      ) : (
+        <CustomPickerAndroid items={this.props.items} icon={this.props.icon} />
+      )
     );
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flexDirection: 'row',
-    alignItems: 'stretch',
-    marginBottom: 1
-  },
-  picker: {
-    flex: 1,
-    color: 'white',
-    backgroundColor: 'rgba(0,0,0,0.4)',
-    borderTopRightRadius: 4,
-    borderBottomRightRadius: 4,
-    height: 57
-  },
-  item: {
-    fontWeight: 'bold'
-  },
-  icon: {
-    borderTopLeftRadius: 4,
-    borderBottomLeftRadius: 4,
-    backgroundColor: 'rgba(0,0,0,0.3)',
-    justifyContent: 'center',
-    padding: 15
-  }
-});
+const styles = StyleSheet.create({});

@@ -17,6 +17,9 @@ export default class CustomTextInput extends Component {
                     style={[styles.input, this.props.style]}
                     placeholderTextColor='white'
                     underlineColorAndroid={'rgba(0,0,0,0)'}
+                    multiline={this.props.multiline}
+                    numberOfLines={this.props.numberOfLines}
+                    maxHeight = {this.props.maxHeight}
                 />
           </View>
         )
@@ -35,7 +38,8 @@ const styles = StyleSheet.create({
         borderBottomLeftRadius: 4,
         backgroundColor: "rgba(0,0,0,0.3)",
         justifyContent: 'center',
-        padding: 15
+        padding: 15,
+        width: 50,
     },
 
     input: {

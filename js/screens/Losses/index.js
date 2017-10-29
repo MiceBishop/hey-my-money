@@ -90,7 +90,7 @@ export default class Losses extends Component {
          <ActionButton
           buttonColor={'red'}
           icon={<MaterialIcon color='white' name='note-add' size={30} />}
-          onPress={() => {}}
+          onPress={() => this.props.navigation.navigate('LossForm')}
           fixNativeFeedbackRadius={true}
         />
       </View>

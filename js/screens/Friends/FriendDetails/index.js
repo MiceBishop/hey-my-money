@@ -93,22 +93,12 @@ export default class FriendDetails extends React.Component {
       <View style={styles.container}>
         <View style={styles.headerSeparator}>
           <Text color={colors.BACKGROUND} style={{ fontWeight: "bold" }}>
-            Gains
+            Gains et Dettes spécifiques
           </Text>
         </View>
         <EarningsList
           onPress={item =>
             this.props.navigation.navigate("EarningDetails", { item })}
-          data={data}
-        />
-        <View style={styles.headerSeparator}>
-          <Text color={colors.BACKGROUND} style={{ fontWeight: "bold" }}>
-            Dettes
-          </Text>
-        </View>
-        <LossesList
-          onPress={item =>
-            this.props.navigation.navigate("LossesDetails", { item })}
           data={data}
         />
         <View

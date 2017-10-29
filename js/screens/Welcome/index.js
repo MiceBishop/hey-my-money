@@ -49,9 +49,9 @@ export default class Welcome extends Component {
           <View>
             <StepOne onPageChange={(page) => this.gotoPage(page)} />
           </View>
-          <View>
+          {/*<View>
             <StepTwo onPageChange={(page) => this.gotoPage(page)} />
-          </View>
+          </View>*/}
           <View>
             <StepThree onPageChange={() => this.props.navigation.dispatch(resetAction)} />
           </View>
@@ -61,7 +61,7 @@ export default class Welcome extends Component {
   }
 
   _renderDotIndicator() {
-      return <PagerDotIndicator pageCount={3} />;
+      return <PagerDotIndicator pageCount={2} />;
   }
 
 }
