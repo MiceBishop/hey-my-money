@@ -45,7 +45,7 @@ export default class StepTwo extends Component {
         </View>
         <View style={styles.part}>
           <MyButton
-            width={150}
+            style={{ width: 150 }}
             title="Suivant"
             color={colors.SECONDARY}
             titleColor={ Platform.OS === 'android' ? colors.BACKGROUND : colors.SECONDARY }

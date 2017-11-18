@@ -30,7 +30,7 @@ export default class StepOne extends Component {
         <View style={styles.part}>
           <MyButton
             title="Suivant"
-            width={150}
+            style={{ width: 150 }}
             color={colors.SECONDARY}
             titleColor={ Platform.OS === 'android' ? colors.BACKGROUND : colors.SECONDARY }
             onPress={this.handlePress.bind(this)}

@@ -19,44 +19,49 @@ const dayNames = ["Dim", "Lun", "Mar", "Mer", "Jeu", "Ven", "Sam"]
 
 const today = new Date()
 
+const fakeText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac condimentum dui,"+
+"quis venenatis sapien. Suspendisse potenti. Ut enim ante, posuere dignissim consectetur sed,"+
+"vestibulum ut dolor. Maecenas malesuada et purus ac porttitor.Donec vulputate risus mauris, et"+
+"tincidunt magna euismod vel."
+"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac condimentum dui,"+
+"quis venenatis sapien. Suspendisse potenti. Ut enim ante, posuere dignissim consectetur sed,"+
+"vestibulum ut dolor. Maecenas malesuada et purus ac porttitor.Donec vulputate risus mauris, et"+
+"tincidunt magna euismod vel."
+"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac condimentum dui,"+
+"quis venenatis sapien. Suspendisse potenti. Ut enim ante, posuere dignissim consectetur sed,"+
+"vestibulum ut dolor. Maecenas malesuada et purus ac porttitor.Donec vulputate risus mauris, et"+
+"tincidunt magna euismod vel."
+"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac condimentum dui,"+
+"quis venenatis sapien. Suspendisse potenti. Ut enim ante, posuere dignissim consectetur sed,"+
+"vestibulum ut dolor. Maecenas malesuada et purus ac porttitor.Donec vulputate risus mauris, et"+
+"tincidunt magna euismod vel."
+
 const data = [
   {
     id: 1,
     name: "Modoulo Boly SOW",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac condimentum dui,"+
-    "quis venenatis sapien. Suspendisse potenti. Ut enim ante, posuere dignissim consectetur sed,"+
-    "vestibulum ut dolor. Maecenas malesuada et purus ac porttitor.Donec vulputate risus mauris, et"+
-    "tincidunt magna euismod vel.",
+    description: fakeText,
     amount: 1000,
     createdAt: dayNames[today.getDay()] + ', ' + today.getDate() + ' ' + monthNames[today.getMonth()] + ' ' + today.getFullYear()
   },
   {
     id: 2,
     name: "Arame MBENGUE",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac condimentum dui,"+
-    "quis venenatis sapien. Suspendisse potenti. Ut enim ante, posuere dignissim consectetur sed,"+
-    "vestibulum ut dolor. Maecenas malesuada et purus ac porttitor.Donec vulputate risus mauris, et"+
-    "tincidunt magna euismod vel.",
+    description: fakeText,
     amount: 1000,
     createdAt: dayNames[today.getDay()] + ', ' + today.getDate() + ' ' + monthNames[today.getMonth()] + ' ' + today.getFullYear()
   },
   {
     id: 3,
     name: "Serigne Saalihou Mbacké NDIAYE",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac condimentum dui,"+
-    "quis venenatis sapien. Suspendisse potenti. Ut enim ante, posuere dignissim consectetur sed,"+
-    "vestibulum ut dolor. Maecenas malesuada et purus ac porttitor.Donec vulputate risus mauris, et"+
-    "tincidunt magna euismod vel.",
+    description: fakeText,
     amount: 1000,
     createdAt: dayNames[today.getDay()] + ', ' + today.getDate() + ' ' + monthNames[today.getMonth()] + ' ' + today.getFullYear()
   },
   {
     id: 4,
     name: "Mohamed Rachid Wenpagnagde COMPAORE",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac condimentum dui,"+
-    "quis venenatis sapien. Suspendisse potenti. Ut enim ante, posuere dignissim consectetur sed,"+
-    "vestibulum ut dolor. Maecenas malesuada et purus ac porttitor.Donec vulputate risus mauris, et"+
-    "tincidunt magna euismod vel.",
+    description: fakeText,
     amount: 1000,
     createdAt: dayNames[today.getDay()] + ', ' + today.getDate() + ' ' + monthNames[today.getMonth()] + ' ' + today.getFullYear()
   },

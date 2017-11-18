@@ -6,7 +6,7 @@ import colors from "~theme/colors";
 export default class EarningForm extends Component {
   render() {
     return (
-      <AddingForm colorType="green" />
+      <AddingForm type="earning" />
     );
   }
 }

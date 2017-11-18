@@ -40,7 +40,7 @@ const DashboardNavigator = TabNavigator(
   {
     Home: { screen: Home },
     Earnings: { screen: Earnings },
-    Losses: { screen: Losses },
+    Losses: { screen: Losses }
     // Friends: { screen: Friends }
   },
   {
@@ -118,7 +118,7 @@ const HeyMyMoney = StackNavigator({
   },
   Dashboard: {
     screen: DashboardNavigator,
-    navigationOptions: {
+    navigationOptions: ({ navigation }) => ({
       title: "Sama Xaliss",
       headerStyle: { backgroundColor: colors.BACKGROUND },
       headerTintColor: colors.SECONDARY,
@@ -130,13 +130,18 @@ const HeyMyMoney = StackNavigator({
             width: 40,
             height: 40,
             backgroundColor: colors.BACKGROUND,
-            borderRadius: 40,
+            borderRadius: 40
           }}
+          onPress={() => navigation.navigate("Settings")}
         >
-          <Icon name={"ios-cog"} size={30} color={colors.SECONDARY} />
+          <Icon
+            name="ios-information-circle"
+            size={30}
+            color={colors.SECONDARY}
+          />
         </TouchableOpacity>
       )
-    }
+    })
   }
 });
 

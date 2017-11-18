@@ -113,16 +113,14 @@ export default class FriendDetails extends React.Component {
           titleColor={
             Platform.OS === "ios" ? colors.BACKGROUND : colors.BACKGROUND
           }
-          width="auto"
-          style={{ marginTop: 2 }}
+          style={{ marginTop: 2, width: 150 }}
           onPress={() => {}}
         />
         <MyButton
           title="Supprimer Contact"
           color={colors.SECONDARY}
           titleColor={Platform.OS === "ios" ? "red" : "red"}
-          width="auto"
-          style={{ marginTop: 2 }}
+          style={{ marginTop: 2, width: 150 }}
           onPress={() => {}}
         />
       </View>

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Text, View, StyleSheet, Platform } from "react-native";
+import { Text, View, ScrollView, StyleSheet, Platform } from "react-native";
 import PropTypes from "prop-types";
 import colors from "~theme/colors";
 import MyButton from "~components/MyButton";
@@ -11,7 +11,7 @@ export default class LossDetails extends React.Component {
   };
   render() {
     return (
-      <View style={styles.container}>
+      <ScrollView style={styles.container}>
         <View style={styles.header}>
           <Text style={[styles.text, { color: colors.SECONDARY, fontSize: 20, fontWeight: "bold" }]}>
             {this.props.navigation.state.params.item.name}
@@ -55,18 +55,19 @@ export default class LossDetails extends React.Component {
               </Text>
             </View>
           </View>
-          <MyButton
-            title="Récupérer"
-            color={colors.SECONDARY}
-            titleColor={
-              Platform.OS === "ios" ? colors.BACKGROUND : colors.BACKGROUND
-            }
-            width="auto"
-            style={{ marginTop: 2 }}
-            onPress={() => {}}
-          />
+          <View style={{ alignItems: "center" }}>
+            <MyButton
+              title="Payer"
+              color={colors.BACKGROUND}
+              titleColor={
+                Platform.OS === "ios" ? colors.BACKGROUND : colors.SECONDARY
+              }
+              style={{ marginTop: 2, width: 150 }}
+              onPress={() => {}}
+            />
+          </View>
         </View>
-      </View>
+      </ScrollView>
     );
   }
 }

@@ -6,7 +6,7 @@ import colors from "~theme/colors";
 export default class LossForm extends Component {
   render() {
     return (
-      <AddingForm colorType="red" />
+      <AddingForm />
     );
   }
 }

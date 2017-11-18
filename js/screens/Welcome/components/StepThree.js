@@ -30,7 +30,7 @@ export default class StepThree extends Component {
         </View>
         <View style={styles.part}>
           <MyButton
-            width={150}
+            style={{ width: 150 }}
             title="Commencer"
             color={colors.SECONDARY}
             titleColor={ Platform.OS === 'android' ? colors.BACKGROUND : colors.SECONDARY }

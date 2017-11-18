@@ -89,7 +89,7 @@ export default class Home extends Component {
     return (
       <View style={styles.container}>
         <Dash onPress={() => this.props.navigation.navigate('HistoryTransacs')} />
-        <ActionButton
+        {/*<ActionButton
           spacing={7}
           buttonColor={colors.BACKGROUND}
           useNativeFeedback={false}
@@ -134,7 +134,7 @@ export default class Home extends Component {
               size={24}
             />
           </ActionButton.Item>
-        </ActionButton>
+        </ActionButton>*/}
       </View>
     );
   }

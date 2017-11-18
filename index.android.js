@@ -31,7 +31,6 @@ import Settings from "~screens/Settings";
 import HistoryTransacs from "~screens/HistoryTransacs";
 
 import colors from '~theme/colors'
-import CurrentItemStore from './js/mobx/currentItemStore'
 
 class App extends Component {
   render() {
@@ -126,12 +125,13 @@ const HeyMyMoney = StackNavigator({
     navigationOptions: {
       title: "Ajouter une dette",
       headerStyle: { backgroundColor: colors.BACKGROUND },
-      headerTintColor: colors.SECONDARY
+      headerTintColor: colors.SECONDARY,
     }
   },
+ 
   Dashboard: {
     screen: DashboardNavigator,
-    navigationOptions: {
+    navigationOptions: ({ navigation }) => ({
       title: "Sama Xaliss",
       headerStyle: {backgroundColor: colors.BACKGROUND },
       headerTintColor: colors.SECONDARY,
@@ -143,13 +143,14 @@ const HeyMyMoney = StackNavigator({
             width: 40,
             height: 40,
             backgroundColor: colors.BACKGROUND,
-            borderRadius: 40
+            borderRadius: 40,
           }}
+          onPress={() => navigation.navigate('Settings')}
         >
-          <Icon name={Platform.OS === "ios" ? "ios-cog" : "md-cog"} size={30} color={colors.SECONDARY} />
+          <Icon name="md-information-circle" size={30} color={colors.SECONDARY} />
         </TouchableOpacity>
       )
-    },
+    }),
   },
 })
 

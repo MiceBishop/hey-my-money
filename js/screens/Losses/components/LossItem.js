@@ -28,7 +28,7 @@ class Item extends Component {
           <View style={{marginLeft: 'auto'}}>
             <MyButton
               onPress={() => {}}
-              width={120}
+              style={{ width: 150 }}
               title="Payer"
               titleColor={Platform.OS === 'ios' ? colors.BACKGROUND: colors.SECONDARY}
               color={colors.BACKGROUND}
@@ -67,17 +67,17 @@ export default class LossItem extends Component {
 const styles = StyleSheet.create({
   title: {
     flexDirection: 'row',
-    height: 38,
+    height: 25,
     alignItems: 'center'
   },
   footer: {
     flexDirection: 'row',
-    height: 38,
+    height: 25,
     alignItems: 'center'
   },
   date: {
     flexDirection: 'row',
-    height: 38,
+    height: 25,
     alignItems: 'center',
   },
   name: {
